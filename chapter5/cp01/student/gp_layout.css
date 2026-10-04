@@ -5,8 +5,8 @@
    Tutorial 5
    Case Problem 1
    
-   Author:   
-   Date:       
+   Author:   Alissa Burnett 
+   Date:     10/03/2026
    
    Filename: gp_layout.css
 
@@ -24,8 +24,13 @@
 
 
 /* Flex Layout Styles */
-
-
+body {
+   display: flex;
+   flex-flow: row wrap;
+}
+section#sheet {
+   flex: 3 1 301px;
+}
 
 
 
@@ -33,7 +38,17 @@
 	Mobile Devices: 0 - 480 pixels
    ============================================
 */
-
+@media screen and (max-width: 480px) {
+   .panel img {
+      width: 100%
+   }
+   nav.horizontal {
+      order: 99;
+   }
+   body > footer {
+      order: 100;
+   }
+}
 
 
 
@@ -41,4 +56,25 @@
 	Tablet and Desktop Devices: Greater than 480 pixels
    ===================================================
 */
-
+@media screen and (min-width: 481px) {
+   nav.horizontal ul {
+      display: flex;
+      flex-flow: row unwrap;
+      height: 40px;
+   }
+   nav.horizontal ul li {
+      flex: 1 1 auto;
+   }
+   .size1 img {
+      width: 100%;
+   }
+   .size2 img {
+      width: 60%;
+   }
+   .size3 img {
+      width: 40%;
+   }
+   .size4 img {
+      width: 30%;
+   }
+}
