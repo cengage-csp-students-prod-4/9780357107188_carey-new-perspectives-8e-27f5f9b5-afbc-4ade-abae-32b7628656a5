@@ -1,12 +1,12 @@
-
+"use strict";
 /*
    New Perspectives on HTML5 and CSS3, 8th Edition
    Tutorial 9
    Case Problem 1
 
    Today at the Union Script
-   Author: 
-   Date:   
+   Author: Alissa Burnett 
+   Date:   11/13/2026
    
    This script uses the getEvent() function to return the
    HTML code containin the daily events at the Bridger College
@@ -174,3 +174,18 @@ function getEvent(day) {
    
    return eventHTML
 }
+let thisDate = new Date(2021, 9, 12);
+let dateString = thisDate.toLocaleDateString();
+let dateHTML = "<h2>" + dataString + "</h2>"
+let thisDay = thisDate.getDay();
+let eventHTML = getEvent(thisDay);
+document.getElementById("unionToday").insertAdjacentHTML("beforeend", dateHTML + eventHTML);
+
+// Get the day of the week from thisDate
+let thisDay = thisDate.getDay();
+
+// Get the events for this day
+let eventHTML = getEvent(thisDay);
+
+// Insert the date and event information into the page
+document.getElementById("unionToday").insertAdjacentHTML("beforeend", dateHTML + eventHTML);
